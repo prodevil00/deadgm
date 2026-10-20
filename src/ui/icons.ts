@@ -1,0 +1,22 @@
+// Inline SVG icons (original, 24×24 viewBox).
+export const ICON = {
+  pause: '<svg viewBox="0 0 24 24"><rect x="6" y="4" width="4.5" height="16" rx="1.2"/><rect x="13.5" y="4" width="4.5" height="16" rx="1.2"/></svg>',
+  back: '<svg viewBox="0 0 24 24"><path d="M15.5 3.5 7 12l8.5 8.5 2.1-2.1L11.2 12l6.4-6.4z"/></svg>',
+  gear: '<svg viewBox="0 0 24 24"><path d="M19.4 13a7.7 7.7 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.4 7.4 0 0 0-1.7-1L15 3.3h-4l-.4 2.6a7.4 7.4 0 0 0-1.7 1l-2.5-1-2 3.5L6.5 11a7.7 7.7 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1a7.4 7.4 0 0 0 1.7 1l.4 2.6h4l.4-2.6a7.4 7.4 0 0 0 1.7-1l2.5 1 2-3.5zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/></svg>',
+  wrench: '<svg viewBox="0 0 24 24"><path d="M22 6.6a5.8 5.8 0 0 1-7.6 5.5L6.2 20.3a2.3 2.3 0 0 1-3.3-3.3l8.2-8.2A5.8 5.8 0 0 1 17.4 2l-3.5 3.5.8 3.3 3.3.8z"/></svg>',
+  map: '<svg viewBox="0 0 24 24"><path d="M15 4 9 2 3 4v18l6-2 6 2 6-2V2zm-1 15.4-4-1.3V4.6l4 1.3z"/></svg>',
+  play: '<svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg>',
+  person: '<svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="3.6"/><path d="M5 21c0-4.4 3-7.5 7-7.5s7 3.1 7 7.5z"/></svg>',
+  bolt: '<svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>',
+  skull: '<svg viewBox="0 0 24 24"><path d="M12 2C7 2 3.5 5.6 3.5 10c0 2.8 1.4 4.6 3 5.6V19c0 .6.4 1 1 1h1v-2h1.5v2h4v-2h1.5v2h1c.6 0 1-.4 1-1v-3.4c1.6-1 3-2.8 3-5.6C20.5 5.6 17 2 12 2zM8.5 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm7 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>',
+  star: '<svg viewBox="0 0 24 24"><path d="m12 1.8 3.1 6.6 7.2.9-5.3 5 1.4 7.1L12 17.9l-6.4 3.5L7 14.3l-5.3-5 7.2-.9z"/></svg>',
+  shield: '<svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5z"/></svg>',
+  gun: '<svg viewBox="0 0 24 24"><path d="M2 9h15l1-2h4v4h-2l-1 2h-5l-1 2H9l-1 4H4l1.2-5H2z"/></svg>',
+  heart: '<svg viewBox="0 0 24 24"><path d="M12 21 3.5 12.7A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 8.5 6.7z"/></svg>',
+  plane: '<svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>',
+  crosshair: '<svg viewBox="0 0 24 24"><path d="M11 2h2v4h-2zM11 18h2v4h-2zM2 11h4v2H2zM18 11h4v2h-4z"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="1.5"/></svg>',
+  ammo: '<svg viewBox="0 0 24 24"><path d="M6 8c0-3 1.5-5 2-6 .5 1 2 3 2 6v12H6zM14 8c0-3 1.5-5 2-6 .5 1 2 3 2 6v12h-4z"/></svg>',
+  people: '<svg viewBox="0 0 24 24"><circle cx="8" cy="7" r="3"/><circle cx="16.5" cy="7.5" r="2.5"/><path d="M2 20c0-3.6 2.6-6.2 6-6.2s6 2.6 6 6.2zM14.6 13.9c.6-.2 1.2-.3 1.9-.3 3 0 5.5 2.4 5.5 6.4h-6.3c0-2.4-.4-4.4-1.1-6.1z"/></svg>',
+  hand: '<svg viewBox="0 0 64 64"><path fill="#fff" stroke="#000" stroke-width="2" d="M26 30V10a4 4 0 0 1 8 0v16l14 3c3 .7 5 3.5 4.5 6.6L50 50c-.5 3-3 5-6 5H32c-2 0-3.8-1-5-2.6L16 38a4 4 0 0 1 6-5.2z"/></svg>',
+  trophy: '<svg viewBox="0 0 24 24"><path d="M19 4V2H5v2H1v4c0 2.5 1.8 4.5 4.2 4.9A7 7 0 0 0 11 17.9V20H7v2h10v-2h-4v-2.1a7 7 0 0 0 5.8-5A5 5 0 0 0 23 8V4zM3 8V6h2v4.8A3 3 0 0 1 3 8zm18 0a3 3 0 0 1-2 2.8V6h2z"/></svg>',
+};

@@ -3,45 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
-    <meta name="theme-color" content="#0d0f12" />
+    <meta name="theme-color" content="#1a140e" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="LAST CONVOY — lead your squad down a zombie-infested desert highway. A free 3D mobile browser game." />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <title>Dead Route: Survival</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d0f12'/%3E%3Cpath d='M18 52 L28 12 H36 L46 52' stroke='%23c9b458' stroke-width='4' fill='none'/%3E%3Ccircle cx='32' cy='30' r='7' fill='%23e8412c'/%3E%3C/svg%3E" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet" />
-    <style>
-      html, body {
-        margin: 0;
-        height: 100%;
-        background: radial-gradient(ellipse at 50% 40%, #1a1d21 0%, #08090b 70%);
-        overflow: hidden;
-        overscroll-behavior: none;
-        touch-action: none;
-        -webkit-user-select: none;
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-      }
-      #game {
-        position: fixed;
-        inset: 0;
-        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-        box-sizing: border-box;
-      }
-      #game canvas { display: block; box-shadow: 0 0 80px rgba(0, 0, 0, 0.8); }
-      #loading {
-        position: fixed; inset: 0; display: grid; place-items: center;
-        color: #8b8f94; font: 600 14px/1 "Arial Narrow", Arial, sans-serif; letter-spacing: 0.3em;
-      }
-    </style>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Last Convoy" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Last Convoy</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <!--APP_CSS-->
   </head>
   <body>
-    <div id="loading">LOADING…</div>
-    <div id="game"></div>
-    <!-- Lets the unbundled source run directly (e.g. GitHub Pages "Deploy from branch").
-         In the Vite build, Phaser is bundled and this map is simply unused. -->
-    <script type="importmap">{ "imports": { "phaser": "https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.esm.js" } }</script>
-    <script type="module" src="./src/main.js"></script>
+    <div id="stage">
+      <canvas id="game" aria-label="Game view"></canvas>
+      <div id="float"></div>
+      <div id="ui"></div>
+      <div id="loading">
+        <div class="logo"><div class="l1 gold">LAST CONVOY</div><div class="l2">MOBILE APOCALYPSE</div></div>
+        <div class="loadbar"><div id="loadfill"></div></div>
+        <div class="loadtxt" id="loadtxt">LOADING</div>
+      </div>
+    </div>
+    <div id="rotate">
+      <svg viewBox="0 0 24 24"><path d="M16 1H8C6.3 1 5 2.3 5 4v16c0 1.7 1.3 3 3 3h8c1.7 0 3-1.3 3-3V4c0-1.7-1.3-3-3-3zm1 19c0 .6-.4 1-1 1H8c-.6 0-1-.4-1-1V4c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v16zm-5-1.5a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4z"/></svg>
+      <div class="gold" style="font-size:30px">ROTATE YOUR PHONE</div>
+      <div class="muted" style="font-weight:700;font-size:18px">Last Convoy is played in portrait mode.</div>
+    </div>
+    <svg width="0" height="0" style="position:absolute"><defs><linearGradient id="goldgrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff3b8"/><stop offset="0.5" stop-color="#ffd25a"/><stop offset="1" stop-color="#f0a020"/></linearGradient></defs></svg>
+    <noscript>Last Convoy needs JavaScript and WebGL.</noscript>
+    <!--APP_JS-->
   </body>
 </html>

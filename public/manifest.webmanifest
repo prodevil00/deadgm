@@ -1,0 +1,17 @@
+{
+  "name": "Last Convoy — Mobile Apocalypse",
+  "short_name": "Last Convoy",
+  "description": "Lead your squad down a zombie-infested desert highway. Steer through gates, grow your army, beat the bosses.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#1a140e",
+  "theme_color": "#1a140e",
+  "categories": ["games", "entertainment"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

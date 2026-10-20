@@ -1,20 +1,25 @@
 {
-  "name": "dead-route-survival",
-  "version": "0.1.0",
+  "name": "last-convoy",
+  "version": "1.0.0",
   "private": true,
-  "description": "Zombie runner-shooter prototype: lead a squad, shoot gates and barrels, beat the boss. Phaser 3 + Vite.",
+  "description": "LAST CONVOY — Mobile Apocalypse. A portrait, touch-first 3D zombie squad runner for mobile browsers (Three.js + TypeScript + esbuild).",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "test": "node --test \"tests/**/*.test.js\""
+    "dev": "node scripts/dev.mjs",
+    "build": "tsc --noEmit && node scripts/build.mjs",
+    "preview": "node scripts/preview.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node scripts/test.mjs",
+    "balance": "node scripts/test.mjs balance"
   },
   "dependencies": {
-    "phaser": "^3.90.0"
+    "three": "^0.186.0"
   },
   "devDependencies": {
-    "vite": "^7.1.0"
+    "@types/node": "^22.0.0",
+    "@types/three": "^0.185.0",
+    "esbuild": "^0.28.0",
+    "typescript": "^6.0.0"
   },
   "engines": {
     "node": ">=20.19"
