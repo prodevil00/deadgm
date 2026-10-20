@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#0d0f12" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>Dead Route: Survival</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d0f12'/%3E%3Cpath d='M18 52 L28 12 H36 L46 52' stroke='%23c9b458' stroke-width='4' fill='none'/%3E%3Ccircle cx='32' cy='30' r='7' fill='%23e8412c'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+        background: radial-gradient(ellipse at 50% 40%, #1a1d21 0%, #08090b 70%);
+        overflow: hidden;
+        overscroll-behavior: none;
+        touch-action: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      #game {
+        position: fixed;
+        inset: 0;
+        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+        box-sizing: border-box;
+      }
+      #game canvas { display: block; box-shadow: 0 0 80px rgba(0, 0, 0, 0.8); }
+      #loading {
+        position: fixed; inset: 0; display: grid; place-items: center;
+        color: #8b8f94; font: 600 14px/1 "Arial Narrow", Arial, sans-serif; letter-spacing: 0.3em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loading">LOADING…</div>
+    <div id="game"></div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

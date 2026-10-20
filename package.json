@@ -1,0 +1,22 @@
+{
+  "name": "dead-route-survival",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Zombie runner-shooter prototype: lead a squad, shoot gates and barrels, beat the boss. Phaser 3 + Vite.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test \"tests/**/*.test.js\""
+  },
+  "dependencies": {
+    "phaser": "^3.90.0"
+  },
+  "devDependencies": {
+    "vite": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=20.19"
+  }
+}
