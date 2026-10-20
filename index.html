@@ -39,6 +39,9 @@
   <body>
     <div id="loading">LOADING…</div>
     <div id="game"></div>
+    <!-- Lets the unbundled source run directly (e.g. GitHub Pages "Deploy from branch").
+         In the Vite build, Phaser is bundled and this map is simply unused. -->
+    <script type="importmap">{ "imports": { "phaser": "https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.esm.js" } }</script>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
