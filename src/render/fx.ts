@@ -228,12 +228,12 @@ void main(){
     float r = length(p);
     if (r > 1.0) discard;
     float edge = smoothstep(0.86, 0.94, r) * (1.0 - smoothstep(0.97, 1.0, r));
-    float fill = step(r, progress) * 0.42;
+    float fill = step(r, progress) * 0.3;
     float pulse = 0.18 + 0.12 * sin(time * 14.0);
     a = max(edge * 0.95, fill) + pulse * (1.0 - r);
   } else {
     float ex = smoothstep(0.82, 0.95, abs(p.x));
-    float fill = step(vUv.y, progress) * 0.38;
+    float fill = step(vUv.y, progress) * 0.28;
     float stripes = step(0.5, fract((vUv.y * 9.0 - time * 1.5))) * 0.12;
     a = max(ex * 0.9, fill) + stripes;
   }
@@ -248,12 +248,11 @@ export class TelegraphPool {
     for (let i = 0; i < capacity; i++) {
       const mat = new THREE.ShaderMaterial({
         uniforms: { progress: { value: 0 }, time: { value: 0 }, color: { value: new THREE.Color(0xff2a2a) }, shape: { value: 0 } },
-        vertexShader: TVERT, fragmentShader: TFRAG, transparent: true, depthWrite: false,
-        polygonOffset: true, polygonOffsetFactor: -4,
+        vertexShader: TVERT, fragmentShader: TFRAG, transparent: true, depthWrite: false, depthTest: false,
       });
       const mesh = new THREE.Mesh(this.geo, mat);
       mesh.visible = false;
-      mesh.renderOrder = 2;
+      mesh.renderOrder = 7; // drawn over characters so danger zones stay readable under big squads
       this.group.add(mesh);
       this.items.push({ mesh, mat, used: false });
     }

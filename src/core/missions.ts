@@ -81,8 +81,9 @@ export const MISSIONS: MissionDef[] = [
     objective: { type: 'reach' }, difficulty: 2, length: 360, speed: 7.2, enemyHp: 1.25, reward: 90, stars: [18, 30],
     time: 'afternoon', seed: 303, introduces: ['Runners', 'Barriers', 'Route choices'],
     events: [
-      horde(22, 9, WR(0.25)),
-      pair(44, add(3), mul(2)),
+      pair(16, add(2), add(3)),
+      horde(34, 7, WR(0.15)),
+      pair(50, add(3), mul(2)),
       wall(66, -4.1, 2.2, 1.4), wall(66, 4.1, 2.2, 1.4),
       wall(76, -4.1, 2.2, 1.4), wall(76, 4.1, 2.2, 1.4),
       horde(92, 12, WR(0.3)),

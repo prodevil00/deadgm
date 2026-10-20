@@ -74,6 +74,15 @@ test('campaign: good player (skill 0.85)', () => campaign(0.85, 22));
 test('campaign: average player (skill 0.7)', () => campaign(0.7, 30));
 test('campaign: casual player (skill 0.55) can still finish with grinding', () => campaign(0.55, 45));
 
+test('a player who never buys upgrades can still clear missions 1-3', () => {
+  const save = defaultSave();
+  for (let i = 0; i < 3; i++) {
+    let won = false;
+    for (let a = 1; a <= 4 && !won; a++) won = play(save, i, a, 0.7).res.won;
+    assert.ok(won, `mission ${i + 1} without upgrades`);
+  }
+});
+
 test('mission 1 is winnable on a fresh save, mission 10 is not trivially winnable fresh', () => {
   const fresh = defaultSave();
   const r1 = play(fresh, 0, 1, 0.7).res;

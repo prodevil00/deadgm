@@ -152,7 +152,8 @@ button { font-family: inherit; color: inherit; border: 0; background: none; padd
 #hud .lv i.on { background: #ff5cc0; }
 #hud .scrap { font-size: 16px; height: 32px; }
 #hud .scrap i { width: 22px; height: 22px; font-size: 13px; }
-#hud .buffs { display: flex; gap: 6px; }
+#hud .buffs { position: absolute; left: calc(var(--sal) + 12px); top: calc(var(--sat) + 70px); display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+#hud .bossbar.on ~ .buffs, #hud .buffs.low { top: calc(var(--sat) + 134px); }
 #hud .buff { padding: 2px 8px; border-radius: 8px; font-weight: 800; font-size: 13px; letter-spacing: 1px; }
 #hud .buff.shield { background: rgba(80,200,255,0.25); border: 1px solid #7fe8ff; color: #c8f6ff; }
 #hud .buff.boost { background: rgba(255,140,40,0.25); border: 1px solid #ffa040; color: #ffd8a8; }
@@ -193,8 +194,8 @@ button { font-family: inherit; color: inherit; border: 0; background: none; padd
 @keyframes flash { 0% { opacity: 0.55; } 100% { opacity: 0; } }
 
 /* ---------- modal (pause, results, settings) */
-.modal { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: calc(var(--sat) + 16px) calc(var(--sar) + 18px) calc(var(--sab) + 16px) calc(var(--sal) + 18px); background: rgba(6,4,2,0.62); animation: fadeIn 0.2s both; }
-.modal .panel { width: 100%; max-width: 400px; padding: 22px 18px 18px; display: flex; flex-direction: column; gap: 12px; animation: pop 0.35s ease both; max-height: 100%; overflow-y: auto; }
+.modal { position: absolute; inset: 0; display: flex; align-items: flex-start; justify-content: center; overflow-y: auto; -webkit-overflow-scrolling: touch; touch-action: pan-y; padding: calc(var(--sat) + 16px) calc(var(--sar) + 18px) calc(var(--sab) + 16px) calc(var(--sal) + 18px); background: rgba(6,4,2,0.62); animation: fadeIn 0.2s both; }
+.modal .panel { width: 100%; max-width: 400px; margin: auto 0; padding: 22px 18px 18px; display: flex; flex-direction: column; gap: 12px; animation: pop 0.35s ease both; }
 .modal h2 { margin: 0 0 4px; text-align: center; font-size: 42px; line-height: 1; }
 .modal .sub { text-align: center; font-weight: 700; font-size: 18px; color: var(--muted); margin-top: -6px; }
 .modal .btn { width: 100%; }
@@ -253,3 +254,17 @@ button { font-family: inherit; color: inherit; border: 0; background: none; padd
 @media (orientation: landscape) and (pointer: coarse) and (max-height: 560px) { #rotate { display: flex; } }
 
 .toast { position: absolute; left: 50%; bottom: calc(var(--sab) + 24px); transform: translateX(-50%); padding: 10px 18px; border-radius: 14px; background: rgba(20,15,10,0.92); border: 2px solid var(--edge-hi); font-weight: 800; font-size: 17px; z-index: 60; animation: fadeIn 0.2s both; pointer-events: none; white-space: nowrap; }
+
+/* ---------- short phones (iPhone SE / mini, Android with tall nav bars) */
+@media (max-height: 720px) {
+  .modal .panel { gap: 9px; padding: 16px 14px 14px; }
+  .modal h2 { font-size: 34px; }
+  .set-row { min-height: 44px; font-size: 17px; }
+  .result-banner .t { font-size: 46px; }
+  .result-stars svg { width: 42px; height: 42px; } .result-stars svg:nth-child(2) { width: 52px; height: 52px; }
+  .rows div { font-size: 16px; }
+  .btn.big { min-height: 62px; font-size: 27px; }
+  .logo-block { margin-top: 1vh; } .logo-block .t1 { font-size: 54px; }
+  .brief { padding: 14px; gap: 9px; } .brief h1 { font-size: 32px; } .brief p { font-size: 16px; }
+  .next-card { margin-bottom: 10px; }
+}

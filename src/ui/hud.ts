@@ -30,10 +30,10 @@ export class Hud {
         <div class="right">
           <div class="weapon"><b class="wname"></b><span class="lv"></span></div>
           <div class="chip scrap"><i>⚙</i><span class="scrapv">0</span></div>
-          <div class="buffs"></div>
         </div>
       </div>
       <div class="bossbar"><div class="name gold"></div><div class="bar"><div class="lag"></div><div class="fill"></div><div class="ticks"></div><span></span></div></div>
+      <div class="buffs"></div>
       <div class="squad-anchor"><div class="squad-badge">${ICON.person}<span>0</span></div></div>
       <div class="caption gold"></div>
       <div class="hint"><div class="hand">${ICON.hand}</div><div>DRAG TO STEER</div></div>

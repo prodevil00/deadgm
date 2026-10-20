@@ -2,7 +2,7 @@
   "name": "last-convoy",
   "version": "1.0.0",
   "private": true,
-  "description": "LAST CONVOY — Mobile Apocalypse. A portrait, touch-first 3D zombie squad runner for mobile browsers (Three.js + TypeScript + esbuild).",
+  "description": "LAST CONVOY \u2014 Mobile Apocalypse. A portrait, touch-first 3D zombie squad runner for mobile browsers (Three.js + TypeScript + esbuild).",
   "type": "module",
   "scripts": {
     "dev": "node scripts/dev.mjs",
@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
-    "@types/three": "^0.185.0",
+    "@types/three": ">=0.184.0 <0.190.0",
     "esbuild": "^0.28.0",
     "typescript": "^6.0.0"
   },

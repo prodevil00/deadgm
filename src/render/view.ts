@@ -788,7 +788,7 @@ export class GameView {
     M.head.rotation.set(head[0], head[1], head[2]);
     // hit flash
     this.bossHitCooldown -= dt;
-    const flash = b.hitT > 0 ? 0.45 : 0;
+    const flash = b.hitT > 0.05 ? 0.16 : 0;
     M.flashMat.emissive.setRGB(flash, flash * 0.25, flash * 0.2);
     for (const m of M.materials) if ((m as THREE.MeshLambertMaterial).emissive && m !== M.flashMat) (m as THREE.MeshLambertMaterial).emissive.setRGB(flash, flash * 0.25, flash * 0.2);
     // red halo while an attack is pending

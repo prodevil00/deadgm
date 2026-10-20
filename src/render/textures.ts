@@ -305,15 +305,36 @@ export class GateLabel {
       }
       ctx.beginPath(); ctx.arc(cx, cy, 10, 0, Math.PI * 2); ctx.stroke();
     }
-    ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    const big = label.length > 4 ? 66 : 104;
-    ctx.font = `${big}px Anton, Impact, "Arial Black", sans-serif`;
+    const big = label.length > 4 ? 66 : 108;
+    // The operator (+, -, ×) is drawn separately and larger: Anton's own signs are tiny and
+    // read as "-" from a distance.
+    const m = /^([+\-×])(.*)$/.exec(label);
+    const sign = m && label.length <= 4 ? m[1] : '';
+    const rest = sign ? m![2] : label;
+    const numFont = `${big}px Anton, Impact, "Arial Black", sans-serif`;
+    const signFont = `900 ${Math.round(big * 0.9)}px "Arial Black", "Helvetica Neue", Arial, sans-serif`;
+    ctx.font = signFont;
+    const sw = sign ? ctx.measureText(sign).width + 4 : 0;
+    ctx.font = numFont;
+    const rw = ctx.measureText(rest).width;
+    let x = W / 2 - (sw + rw) / 2;
+    const y = H * 0.47;
+    ctx.lineJoin = 'round';
     ctx.lineWidth = 10;
     ctx.strokeStyle = css(1, 0.35);
-    ctx.strokeText(label, W / 2, H * 0.46);
     ctx.fillStyle = '#ffffff';
-    ctx.fillText(label, W / 2, H * 0.46);
+    ctx.textAlign = 'left';
+    if (sign) {
+      ctx.font = signFont;
+      ctx.strokeText(sign, x, y);
+      ctx.fillText(sign, x, y);
+      x += sw;
+    }
+    ctx.font = numFont;
+    ctx.strokeText(rest, x, y);
+    ctx.fillText(rest, x, y);
+    ctx.textAlign = 'center';
     ctx.font = '600 22px "Barlow Condensed", "Arial Narrow", sans-serif';
     ctx.fillStyle = 'rgba(255,255,255,0.92)';
     ctx.fillText(sub, W / 2, H * 0.85);
