@@ -26,12 +26,15 @@ jobs:
 
       - name: Install dependencies
         run: |
-          if [ -f package-lock.json ]; then npm ci; else npm install; fi
+          if [ -f package-lock.json ]; then npm ci; else npm install --no-audit --no-fund; fi
 
-      - name: Unit tests
+      - name: Unit tests (game logic, saves, missions, simulation)
         run: npm test
 
-      - name: Build
+      - name: Campaign balance simulation
+        run: npm run balance
+
+      - name: Type-check and production build
         run: npm run build
 
       - uses: actions/configure-pages@v5
